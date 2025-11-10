@@ -30,11 +30,11 @@
   - npm run dev + json-server --watch db.json --port 3000 
 
 ## 🔹 3. Image demo projects
-<img src="././src/img/list.png" alt="Logo" width="200" />
-<img src="././src/img/phantrang.png" alt="Logo" width="200" />
-<img src="././src/img/add.png" alt="Logo" width="200" />
-<img src="././src/img/edit.png" alt="Logo" width="200" />
-<img src="././src/img/delete.png" alt="Logo" width="200" />
+<img src="././src/img/list.png" alt="Logo" width="1000" />
+<img src="././src/img/phantrang.png" alt="Logo" width="1000" />
+<img src="././src/img/add.png" alt="Logo" width="1000" />
+<img src="././src/img/edit.png" alt="Logo" width="1000" />
+<img src="././src/img/delete.png" alt="Logo" width="1000" />
 
 [Đây là trang list](./src/img/list.png)
 [Đây là trang list](./src/img/phantrang.png)
