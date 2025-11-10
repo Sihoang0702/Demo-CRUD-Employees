@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# TAO PAGE
+## GIỚI THIỆU
+Đây là bài ứng tuyển "CRUD Employees" của CÔNG TY TNHH PHẦN MỀM VIETAPP 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## CÔNG NGHỆ SỬ DỤNG
+- React + TypeScript + Vite
+- React Query for data fetching & caching
+- Axios for HTTP requests
+- Ant Design for UI components
+- React Hook Form for form management
 
-Currently, two official plugins are available:
+## 🔹 1. Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📦src
+ ┣ 📂pages
+ ┃ ┣ ┣ Home.tsx
+ ┃ ┃ ┣ List.tsx
+ ┃ ┃ ┣ Signin.tsx
+ ┃ ┃ ┣ Signup.tsx
+ ┣ 📂utils
+ ┃ ┣ 📂hook
+ ┃ ┃ ┣ ModalCreatEdit.tsx (do số lượng file ít, nên em đã ko custom hook)
+ ┃ ┣ ModalCreateEdit.tsx
+ ┃ ┣ 📜_app.tsx
+ ┃
+  ┗ db.json
 
-## Expanding the ESLint configuration
+## 🔹 2. Cách chạy project
+  - npm i
+  - npm run dev + json-server --watch db.json --port 3000 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 🔹 3. Image demo projects
+[Đây là trang list](./src/img/list.png)
+[Đây là trang list](./src/img/phantrang.png)
+[Đây là trang add](./src/img/add.png)
+[Đây là trang edit](./src/img/edit.png)
+[Đây là trang xóa](./src/img/delete.png)
