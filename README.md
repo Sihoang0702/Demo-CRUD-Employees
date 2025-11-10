@@ -1,6 +1,6 @@
 # TAO PAGE
 ## GIỚI THIỆU
-Đây là bài ứng tuyển "CRUD Employees" của CÔNG TY TNHH PHẦN MỀM VIETAPP 
+## Đây là bài ứng tuyển "CRUD Employees" của CÔNG TY TNHH PHẦN MỀM VIETAPP 
 
 ## CÔNG NGHỆ SỬ DỤNG
 - React + TypeScript + Vite
