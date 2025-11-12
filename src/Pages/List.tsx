@@ -23,14 +23,14 @@ const ListEmployee = () => {
     const { data, isLoading, isError } = useQuery<IEmployee[]>({
         queryKey: ["EMPLOYEES"],
         queryFn: async () => {
-            const res = await axios.get("http://localhost:3000/employees");
+            const res = await axios.get("/api/employees");
             return res.data;
         },
     });
 
     const { mutate, isPending } = useMutation({
         mutationFn: async (id: number) => {
-            await axios.delete(`http://localhost:3000/employees/${id}`);
+            await axios.delete(`/api/employees?id=${id}`);
         },
         onSuccess: () => {
             message.success("Xóa nhân viên thành công!");
