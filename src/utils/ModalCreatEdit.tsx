@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
 import { useForm, Controller } from "react-hook-form";
-import { Form, Input, DatePicker, Select, Button, message, Modal } from "antd";
+import { Form, Input, DatePicker, Select, Button, Modal, message } from "antd";
 import dayjs from "dayjs";
 
 interface IEmployee {
@@ -18,12 +16,11 @@ interface Props {
   open: boolean;
   onClose: () => void;
   employee?: IEmployee | null;
+  onSave: (emp: IEmployee) => void; // thêm prop onSave
 }
 
-const CreateEditEmployees = ({ open, onClose, employee }: Props) => {
-  const queryClient = useQueryClient();
+const CreateEditEmployees = ({ open, onClose, employee, onSave }: Props) => {
   const [formInstance] = Form.useForm();
-
   const { control, handleSubmit, reset } = useForm<IEmployee>({
     defaultValues: {
       name: "",
@@ -38,7 +35,7 @@ const CreateEditEmployees = ({ open, onClose, employee }: Props) => {
     if (employee) {
       reset({
         ...employee,
-        dob: employee.dob,
+        dob: employee.dob, // giữ định dạng string "YYYY-MM-DD"
       });
     } else {
       reset({
@@ -51,42 +48,15 @@ const CreateEditEmployees = ({ open, onClose, employee }: Props) => {
     }
   }, [employee, reset]);
 
-  const { mutate, isPending } = useMutation({
-    mutationFn: async (data: IEmployee) => {
-      if (employee?.id) {
-        return axios.put(`http://localhost:3000/employees/${employee.id}`, data);
-      } else {
-        return axios.post("http://localhost:3000/employees", data);
-      }
-    },
-    onSuccess: (res) => {
-      if (employee?.id) {
-        // Nếu là cập nhật, giữ nguyên cách cũ
-        queryClient.invalidateQueries({ queryKey: ["EMPLOYEES"] });
-        message.success("Cập nhật thành công!");
-      } else {
-        // Thêm mới: đưa nhân viên lên đầu danh sách
-        queryClient.setQueryData<IEmployee[]>(["EMPLOYEES"], (old = []) => [
-          res.data, // dữ liệu mới từ backend
-          ...old,
-        ]);
-        message.success("Thêm mới thành công!");
-        // Scroll lên đầu bảng
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-      onClose();
-    },
-    onError: () => {
-      message.error("Có lỗi xảy ra!");
-    },
-  });
-
-
   const onSubmit = (data: IEmployee) => {
-    mutate({
+    const empData: IEmployee = {
       ...data,
-      dob: dayjs(data.dob).format("YYYY-MM-DD"),
-    });
+      dob: data.dob ? dayjs(data.dob).format("YYYY-MM-DD") : "",
+      id: employee?.id, // giữ id nếu là sửa
+    };
+    onSave(empData); // gọi hàm onSave từ parent
+    message.success(employee ? "Cập nhật nhân viên thành công!" : "Thêm nhân viên thành công!");
+    onClose();
   };
 
   return (
@@ -99,8 +69,12 @@ const CreateEditEmployees = ({ open, onClose, employee }: Props) => {
     >
       <Form layout="vertical" form={formInstance} onFinish={handleSubmit(onSubmit)}>
         <Form.Item label="Họ và tên" required>
-          <Controller name="name" control={control} rules={{ required: true }}
-            render={({ field }) => <Input {...field} placeholder="Nhập họ và tên" />} />
+          <Controller
+            name="name"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => <Input {...field} placeholder="Nhập họ và tên" />}
+          />
         </Form.Item>
 
         <Form.Item label="Ngày sinh" required>
@@ -110,9 +84,11 @@ const CreateEditEmployees = ({ open, onClose, employee }: Props) => {
             rules={{ required: true }}
             render={({ field }) => (
               <DatePicker
-                value={field.value ? dayjs(field.value) : undefined} 
+                value={field.value ? dayjs(field.value) : undefined}
                 style={{ width: "100%" }}
-                onChange={(date) => field.onChange(date ? dayjs(date).format("YYYY-MM-DD") : "")} 
+                onChange={(date) =>
+                  field.onChange(date ? dayjs(date).format("YYYY-MM-DD") : "")
+                }
               />
             )}
           />
@@ -150,13 +126,11 @@ const CreateEditEmployees = ({ open, onClose, employee }: Props) => {
             name="address"
             control={control}
             rules={{ required: true }}
-            render={({ field }) => (
-              <Input.TextArea {...field} placeholder="Nhập địa chỉ" />
-            )}
+            render={({ field }) => <Input.TextArea {...field} placeholder="Nhập địa chỉ" />}
           />
         </Form.Item>
 
-        <Button type="primary" htmlType="submit" block loading={isPending}>
+        <Button type="primary" htmlType="submit" block>
           {employee ? "Cập nhật" : "Thêm mới"}
         </Button>
       </Form>
