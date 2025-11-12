@@ -1,7 +1,7 @@
 {
   "employees": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Nguyễn Văn A",
       "dob": "1998-01-04",
       "gender": "Male",
@@ -9,7 +9,7 @@
       "address": "Hà Nội"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Trần Thị B",
       "dob": "1999-02-03",
       "gender": "Female",
@@ -17,7 +17,7 @@
       "address": "Hải Phòng"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Phạm Văn C",
       "dob": "1997-03-12",
       "gender": "Male",
@@ -25,7 +25,7 @@
       "address": "Nam Định"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Lê Thị D",
       "dob": "1996-04-21",
       "gender": "Female",
@@ -33,7 +33,7 @@
       "address": "Nghệ An"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Hoàng Văn E",
       "dob": "1995-05-30",
       "gender": "Male",
@@ -41,7 +41,7 @@
       "address": "Thanh Hóa"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Nguyễn Thị F",
       "dob": "1998-06-17",
       "gender": "Female",
@@ -49,7 +49,7 @@
       "address": "Đà Nẵng"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Trần Văn G",
       "dob": "1994-07-09",
       "gender": "Male",
@@ -57,7 +57,7 @@
       "address": "Huế"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Phan Thị H",
       "dob": "1993-08-25",
       "gender": "Female",
@@ -65,7 +65,7 @@
       "address": "Cần Thơ"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Vũ Văn I",
       "dob": "2000-09-11",
       "gender": "Male",
@@ -73,7 +73,7 @@
       "address": "Quảng Ninh"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Đặng Thị J",
       "dob": "1999-10-03",
       "gender": "Female",
@@ -81,7 +81,7 @@
       "address": "Lào Cai"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Ngô Văn K",
       "dob": "1997-11-14",
       "gender": "Male",
@@ -89,7 +89,7 @@
       "address": "Bắc Giang"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Bùi Thị L",
       "dob": "1996-12-01",
       "gender": "Female",
@@ -97,7 +97,7 @@
       "address": "Hà Nam"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Phùng Văn M",
       "dob": "1995-01-22",
       "gender": "Male",
@@ -105,7 +105,7 @@
       "address": "Thái Bình"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Tạ Thị N",
       "dob": "1994-02-15",
       "gender": "Female",
@@ -113,7 +113,7 @@
       "address": "Hưng Yên"
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Đỗ Văn O",
       "dob": "1993-03-09",
       "gender": "Male",
@@ -121,7 +121,7 @@
       "address": "Ninh Bình"
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Mai Thị P",
       "dob": "1992-04-28",
       "gender": "Female",
@@ -129,7 +129,7 @@
       "address": "Phú Thọ"
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Nguyễn Văn Q",
       "dob": "1991-05-13",
       "gender": "Male",
@@ -137,7 +137,7 @@
       "address": "Hà Tĩnh"
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Trịnh Thị R",
       "dob": "1998-06-07",
       "gender": "Female",
@@ -145,7 +145,7 @@
       "address": "Bắc Ninh"
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Phạm Văn S",
       "dob": "1999-07-29",
       "gender": "Male",
@@ -153,7 +153,7 @@
       "address": "Hà Nội"
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Lê Thị T",
       "dob": "1997-08-17",
       "gender": "Female",
@@ -161,7 +161,7 @@
       "address": "Đà Lạt"
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Hoàng Văn U",
       "dob": "1995-09-20",
       "gender": "Male",
@@ -169,7 +169,7 @@
       "address": "Buôn Ma Thuột"
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "Đinh Thị V",
       "dob": "1996-10-05",
       "gender": "Female",
@@ -177,7 +177,7 @@
       "address": "Kon Tum"
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "Nguyễn Văn W",
       "dob": "1998-11-16",
       "gender": "Male",
@@ -185,7 +185,7 @@
       "address": "Đà Nẵng"
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Phan Thị X",
       "dob": "1999-12-25",
       "gender": "Female",
@@ -193,7 +193,7 @@
       "address": "Cà Mau"
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "Trần Văn Y",
       "dob": "1997-01-30",
       "gender": "Male",
@@ -201,7 +201,7 @@
       "address": "Hà Nội"
     },
     {
-      "id": 26,
+      "id": "26",
       "name": "Vũ Thị Z",
       "dob": "1998-02-14",
       "gender": "Female",
@@ -209,7 +209,7 @@
       "address": "Hải Dương"
     },
     {
-      "id": 27,
+      "id": "27",
       "name": "Phạm Văn AA",
       "dob": "1999-03-22",
       "gender": "Male",
@@ -217,7 +217,7 @@
       "address": "Hòa Bình"
     },
     {
-      "id": 28,
+      "id": "28",
       "name": "Lê Thị BB",
       "dob": "1995-04-09",
       "gender": "Female",
@@ -225,7 +225,7 @@
       "address": "Bình Dương"
     },
     {
-      "id": 29,
+      "id": "29",
       "name": "Hoàng Văn CC",
       "dob": "1996-05-27",
       "gender": "Male",
@@ -233,7 +233,7 @@
       "address": "TP.HCM"
     },
     {
-      "id": 30,
+      "id": "30",
       "name": "Nguyễn Thị DD",
       "dob": "1997-06-15",
       "gender": "Female",
@@ -247,18 +247,34 @@
       "gender": "Male",
       "email": "doantran.web@gmail.com",
       "address": "Cau Giay"
+    },
+    {
+      "id": "7c93",
+      "name": "Hoang Nguyen Si",
+      "dob": "2025-11-12",
+      "gender": "Male",
+      "email": "d@gmail.com",
+      "address": "Cau Giay"
+    },
+    {
+      "id": "4b04",
+      "name": "Hoang Nguyen Si",
+      "dob": "2025-11-05",
+      "gender": "Male",
+      "email": "emailUser1727@gmail.com",
+      "address": "Cau Giay"
     }
   ],
   "users": [
     {
       "email": "admin@gmail.com",
       "password": "$2a$10$lpxtife2P8UPW4gZ1YLoGeBMKlZewINZ.GPSAKHFtv4bo0/ZAz3l.",
-      "id": 1
+      "id": "1"
     },
     {
       "email": "user@gmail.com",
       "password": "$2a$10$YewSIwfCpM1K04evyvOVvu68CrctaE4.UiKd1GGbkN49z82CYHHA6",
-      "id": 2
+      "id": "2"
     }
   ]
 }

@@ -121,7 +121,10 @@ const ListEmployee = () => {
 
             <CreateEditEmployees
                 open={openModal}
-                onClose={() => setOpenModal(false)}
+                onClose={() => {
+                    setOpenModal(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 employee={selectedEmployee}
             />
         </div>

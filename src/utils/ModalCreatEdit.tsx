@@ -38,7 +38,7 @@ const CreateEditEmployees = ({ open, onClose, employee }: Props) => {
     if (employee) {
       reset({
         ...employee,
-        dob: dayjs(employee.dob),
+        dob: employee.dob,
       });
     } else {
       reset({
@@ -59,15 +59,28 @@ const CreateEditEmployees = ({ open, onClose, employee }: Props) => {
         return axios.post("http://localhost:3000/employees", data);
       }
     },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["EMPLOYEES"] });
-      message.success(employee ? "Cập nhật thành công!" : "Thêm mới thành công!");
+    onSuccess: (res) => {
+      if (employee?.id) {
+        // Nếu là cập nhật, giữ nguyên cách cũ
+        queryClient.invalidateQueries({ queryKey: ["EMPLOYEES"] });
+        message.success("Cập nhật thành công!");
+      } else {
+        // Thêm mới: đưa nhân viên lên đầu danh sách
+        queryClient.setQueryData<IEmployee[]>(["EMPLOYEES"], (old = []) => [
+          res.data, // dữ liệu mới từ backend
+          ...old,
+        ]);
+        message.success("Thêm mới thành công!");
+        // Scroll lên đầu bảng
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
       onClose();
     },
     onError: () => {
       message.error("Có lỗi xảy ra!");
     },
   });
+
 
   const onSubmit = (data: IEmployee) => {
     mutate({
@@ -97,10 +110,9 @@ const CreateEditEmployees = ({ open, onClose, employee }: Props) => {
             rules={{ required: true }}
             render={({ field }) => (
               <DatePicker
-                {...field}
-                value={field.value ? dayjs(field.value) : null}
+                value={field.value ? dayjs(field.value) : undefined} 
                 style={{ width: "100%" }}
-                onChange={(date) => field.onChange(date)}
+                onChange={(date) => field.onChange(date ? dayjs(date).format("YYYY-MM-DD") : "")} 
               />
             )}
           />

@@ -24,7 +24,7 @@ const Signin = () => {
         reset()
     }
   })  
-  const {register, handleSubmit, formState: {error}, reset} =useForm({
+  const {register, handleSubmit, reset} =useForm({
     defaultValues:{
       email: "",
       password: ""
